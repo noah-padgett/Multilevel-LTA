@@ -1,0 +1,53 @@
+[[init]]
+iterators = cond;
+cond = 1:108;
+
+
+filename = "condition_[[cond]]_results.inp";
+outputDirectory = "E:\Moonunit Zappa\MLTA\2019_Rerun\Condition [[cond]]";
+[[/init]]
+
+TITLE: MLTA Test    
+
+DATA: FILE IS condition[[cond]]_replist.dat;
+        Type = MONTECARLO;    
+
+VARIABLE:	
+	NAMES ARE u1-u10 u21-u30 c1 c2 cluster;     
+	USEVARIABLES = u1-u10 u21-u30;
+        CATEGORICAL = u1-u10 u21-u30;        
+	CLASSES=c1(2) c2(2);        
+	CLUSTER=cluster;        
+
+ANALYSIS: TYPE = MIXTURE TWOLEVEL;        
+	STARTS = 200 20;        
+	PROCESS=4(STARTS);
+	INTEGRATION = 10;    
+
+MODEL:
+        %WITHIN%
+        %OVERALL%
+            c2 ON c1;
+        %BETWEEN%
+        %OVERALL%
+            c2#1 ON c1#1;
+           c1#1 c2#1;
+
+
+    MODEL c1:
+        %BETWEEN%
+        %c1#1%
+            [u1$1-u10$1](a1-a10);
+
+        %c1#2%
+            [u1$1-u10$1](a11-a20);
+  
+    MODEL c2:
+        %BETWEEN%
+        %c2#1%
+            [u21$1-u30$1](a1-a10);
+
+        %c2#2%
+            [u21$1-u30$1](a11-a20);
+
+    Savedata:   results are alloutput_c[[cond]].DAT;

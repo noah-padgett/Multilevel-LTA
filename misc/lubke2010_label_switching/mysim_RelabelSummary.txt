@@ -1,0 +1,56 @@
+mysim_RelabelSummary.txt written on Fri Jun 19 05:58:00 2020 in C:/Users/noahp/Box/Research/Morgan-Padgett/Multilevel-LTA/misc/lubke2010_label_switching 
+
+SUMMARY OF INPUTS
+
+Assigned Class Column       : 10 
+True Class Column           : 5 
+CAnum                       : 1.2 
+Correct Assignment Criteria : 0.3 
+CLPSnum                     : 1.2 
+Collapsing Criteria         : 0.7 
+K                           : 4 
+
+SUMMARY OF LABEL CORRECTIONS
+
+Number of Data Sets             : 5 
+Number with Correct Labels      : 0 
+Number with Incorrect Labels    : 5 
+Number with Corrigible Labels   : 5 ** 
+Number with Incorrigible Labels : 0 
+
+SUMMARY OF DATA VALIDATION (individual results in mysim_RelabelValidation.txt )
+
+Number of data sets which:
+Have square assignment matrices : 5 
+Have all row sums > 0           : 5 
+Have all column sums > 0        : 5 
+Meet collapsed criteria         : 5 
+Meet class assignment criteria  : 5 
+
+SUMMARY OF CONDITIONAL CORRECT ASSIGNMENTS (individual resluts in mysim_ConditionalAssignment.txt )***
+
+ class 1 	     class 2 	     class 3 	     class 4 	   
+ Min.   :0.99   Min.   :0.96   Min.   :1      Min.   :0.87  
+ 1st Qu.:0.99   1st Qu.:0.97   1st Qu.:1      1st Qu.:0.92  
+ Median :0.99   Median :0.98   Median :1      Median :0.94  
+ Mean   :0.99   Mean   :0.98   Mean   :1      Mean   :0.93  
+ 3rd Qu.:0.99   3rd Qu.:0.98   3rd Qu.:1      3rd Qu.:0.95  
+ Max.   :0.99   Max.   :0.98   Max.   :1      Max.   :0.97  
+
+** See mysim_NewClassLabels.txt for new class labes where:
+Column one   : 1 = labels were corrigible, 0 = labels were correct , and NA = labels incorrigible 
+Column two   : Contains file names
+Column three : contains (potentially new) label for true class 1
+Column four  : contains (potentially new) label for true class 2
+Column five  : contains (potentially new) label for true class 3
+and so forth
+
+To read mysim_NewClassLabels.txt into R use:
+newLabels <- read.table(mysim_NewClassLabels.txt)
+
+*** Conditional correct assignment summaries are computed
+ excluding data sets with incorrigible labels (see NA count)
+ after the assignment matrix has been relabeled.
+ Note that assignment values are still recorded in 
+ ConditionalAssignment.txt for corrigible matrices which failed
+ the minimum assignment criterion.

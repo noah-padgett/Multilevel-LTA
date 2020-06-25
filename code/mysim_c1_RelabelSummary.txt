@@ -1,0 +1,56 @@
+code/mysim_c1_RelabelSummary.txt written on Mon Jun 22 17:00:41 2020 in C:/Users/noahp/Box/Research/Morgan-Padgett/Multilevel-LTA 
+
+SUMMARY OF INPUTS
+
+Assigned Class Column       : 15 
+True Class Column           : 10 
+CAnum                       : 1.2 
+Correct Assignment Criteria : 0.6 
+CLPSnum                     : 1.2 
+Collapsing Criteria         : 0.4 
+K                           : 2 
+
+SUMMARY OF LABEL CORRECTIONS
+
+Number of Data Sets             : 5 
+Number with Correct Labels      : 1 
+Number with Incorrect Labels    : 4 
+Number with Corrigible Labels   : 5 ** 
+Number with Incorrigible Labels : 0 
+
+SUMMARY OF DATA VALIDATION (individual results in code/mysim_c1_RelabelValidation.txt )
+
+Number of data sets which:
+Have square assignment matrices : 5 
+Have all row sums > 0           : 5 
+Have all column sums > 0        : 5 
+Meet collapsed criteria         : 5 
+Meet class assignment criteria  : 5 
+
+SUMMARY OF CONDITIONAL CORRECT ASSIGNMENTS (individual resluts in code/mysim_c1_ConditionalAssignment.txt )***
+
+ class 1 	     class 2 	   
+ Min.   :0.67   Min.   :0.85  
+ 1st Qu.:0.71   1st Qu.:0.86  
+ Median :0.73   Median :0.87  
+ Mean   :0.72   Mean   :0.87  
+ 3rd Qu.:0.74   3rd Qu.:0.88  
+ Max.   :0.74   Max.   :0.90  
+
+** See code/mysim_c1_NewClassLabels.txt for new class labes where:
+Column one   : 1 = labels were corrigible, 0 = labels were correct , and NA = labels incorrigible 
+Column two   : Contains file names
+Column three : contains (potentially new) label for true class 1
+Column four  : contains (potentially new) label for true class 2
+Column five  : contains (potentially new) label for true class 3
+and so forth
+
+To read code/mysim_c1_NewClassLabels.txt into R use:
+newLabels <- read.table(code/mysim_c1_NewClassLabels.txt)
+
+*** Conditional correct assignment summaries are computed
+ excluding data sets with incorrigible labels (see NA count)
+ after the assignment matrix has been relabeled.
+ Note that assignment values are still recorded in 
+ ConditionalAssignment.txt for corrigible matrices which failed
+ the minimum assignment criterion.

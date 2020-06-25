@@ -1,0 +1,163 @@
+---
+title: "3-Class Variance Decomposition"
+author: "R. Noah Padgett"
+date: "6/25/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+
+# three class decomposition
+K = 3
+alpha1 = c(0.40, 0.90, 0)
+alpha2 = c(-15, -15, 0)#c(-1, 1, 0) #
+sig_alpha1 = c(0.8, 0.8, 0)
+sig_alpha2 = c(0.25, 0.25, 0)
+gamma = c(18, 17.5, 0, 16)#c(1, 1, 1, 1)#
+beta = c(0.3, 0.3, 0, 0.3)#c(0.3, 0.3, 0.3, 0.3)# 
+
+
+c1 <- 1:K
+
+
+## class  probabilities (for variance)
+p1 <- exp(alpha1) / (sum(exp(alpha1)))
+p1
+# 1. ICC
+icc <- sig_alpha1/(sig_alpha1 + pi**2/3)
+icc
+
+# 2. variance C_1 (time 1 latent class)
+var_c1 <- sum(p1 * c1 ** 2) - (sum(p1 * c1)) ** 2
+var_c1
+# 3. contribution of C1 on C2
+var_c1k <- p1*(1-p1)
+# c1
+var_c1_2_c21 <- ((gamma[1])**2)*var_c1k[1] + ((gamma[3])**2)*var_c1k[2] - ((gamma[1])*(gamma[3]))*p1[1]*p1[2] 
+var_c1_2_c21
+# c2
+var_c1_2_c22 <- ((gamma[2])**2)*var_c1k[1] + ((gamma[4])**2)*var_c1k[2] - ((gamma[2])*(gamma[4]))*p1[1]*p1[2] 
+var_c1_2_c22
+# total
+var_c1_2_c2 <- ((gamma[1])**2 + (gamma[2])**2)*var_c1k[1] + ((gamma[3])**2+(gamma[4])**2)*var_c1k[2] - ((gamma[1])*(gamma[3]) + (gamma[2])*(gamma[4]))*p1[1]*p1[2] 
+var_c1_2_c2
+
+
+# 4. Split forwarded variance by icc
+var_c1_exp <- 
+  icc[1]*(( (gamma[1])**2 + (gamma[2])**2)*var_c1k[1] -
+            ((gamma[1])*(gamma[3]))*p1[1]*p1[2]) +
+  icc[2]*(( (gamma[3])**2+(gamma[4])**2)*var_c1k[2] - 
+            ((gamma[2])*(gamma[4]))*p1[1]*p1[2])
+
+var_c1_res <- 
+  (1-icc[1])*(( (gamma[1])**2 + (gamma[2])**2)*var_c1k[1] -
+                ((gamma[1])*(gamma[3]))*p1[1]*p1[2]) +
+  (1-icc[2])*(( (gamma[3])**2+(gamma[4])**2)*var_c1k[2] - 
+                ((gamma[2])*(gamma[4]))*p1[1]*p1[2])
+var_c1_exp; var_c1_res; var_c1_exp+ var_c1_res
+
+
+# 5. Contribution of a1 on C2
+# does this in two ways.
+# i. through C1
+var_c1_2_c2
+
+
+# ii. through a2
+# c1
+var_a1_2_a21 <- (beta[1]**2)*sig_alpha1[1] + (beta[3]**2)*sig_alpha1[2]
+var_a1_2_a21
+# c2
+var_a1_2_a22 <- (beta[2]**2)*sig_alpha1[1] + (beta[4]**2)*sig_alpha1[2]
+var_a1_2_a22
+# total
+var_a1_2_a2 <- (beta[1]**2)*sig_alpha1[1] + (beta[3]**2)*sig_alpha1[2] + (beta[2]**2)*sig_alpha1[1] + (beta[4]**2)*sig_alpha1[2]
+var_a1_2_a2
+
+# next, sum pieces together
+var_a1_2_c2_tot <- var_c1_exp + var_a1_2_a2 + 2*sqrt(var_c1_exp*var_a1_2_a2)
+
+# 6. variance c2 w.r.t response prob
+
+# compute logits of response prob at time 2
+a11 <- alpha2[1] + beta[1]*alpha1[1] + gamma[1]
+a12 <- alpha2[1] + beta[2]*alpha1[1] + gamma[2]
+a13 <- 0
+
+a21 <- alpha2[2] + beta[3]*alpha1[2] + gamma[3]
+a22 <- alpha2[2] + beta[4]*alpha1[2] + gamma[4]
+a23 <- 0
+
+a31 <- alpha2[1]
+a32 <- alpha2[2]
+a33 <- 0
+a2 <- c(a11, a12,a13, a21,a22, a23, a31, a32, a33)
+round(matrix(a2, ncol=3, byrow=T),2)
+
+# compute transition probabilities
+p11<-exp(a11)/(1+exp(a11)+exp(a12))
+p12<-exp(a12)/(1+exp(a11)+exp(a12))
+p13<-1 - p11 - p12
+
+p21<-exp(a21)/(1+exp(a21)+exp(a22))
+p22<-exp(a22)/(1+exp(a21)+exp(a22))
+p23<-1 - p21 - p22
+
+p31<- exp(a31)/(1 + exp(a31) + exp(a32))
+p32<- exp(a32)/(1 + exp(a31) + exp(a32))
+p33<- 1 - p31 - p32
+
+p2 <- c(p11, p21, p31, p12, p22, p32, p13, p23, p33)
+p2 <- matrix(p2, ncol=3)
+round(p2,2)
+
+#merge into pxc form
+p1 <- matrix(p1, nrow=1)
+p2 <- p1%*%p2
+c2 <- 1:K
+# compute variance
+var_c2 <- sum(p2 * (c2 ** 2)) - (sum(p2 * c2)) ** 2
+var_c2
+
+var_alpha2 <- sig_alpha2[1]+sig_alpha2[1]+2*sqrt(sig_alpha2[1]*sig_alpha2[2])
+
+# 6. total variance of C2
+total_c2 <- (pi ** 2) / 3 + var_c2 + var_a1_2_c2_tot + var_c1_2_c2 + var_alpha2
+
+# 7. compute proportion of variance in C2 explained by a1
+R2_1 <- ex_a1 <- var_a1_2_c2_tot / total_c2
+
+# 8. proportion of variance in C2 explained by residual of a2
+R2_2 <- ex_a2 <- var_alpha2 / total_c2
+# 9. compute proportion of variance in C2 explained by residual of C1
+R2_3 <- ex_c1r <- var_c1_res / total_c2
+# 10. find total variance in C2 explained by the model
+R2_model <- ex_mod <- (ex_a1 + ex_a2 + ex_c1r)
+
+# 11. find total proportion of variance in C2 explained by C1
+R2_c1 <- ex_c1_tot <- var_c1_2_c2 / total_c2
+
+# 12. find the additional proportion of variance in C2 explain by adding the school level-2 effect at time-2
+R2_add <- ex_mod - ex_c1_tot
+
+
+out <-
+  matrix(c(R2_1, R2_2, R2_3, R2_c1, R2_model, R2_add), ncol = 1)
+rownames(out) <-
+  c("R2-alpha1",
+    "R2-alpha2",
+    "R2-C1-residual",
+    "R2-C1",
+    "R2-model",
+    "R2-addition-level-2")
+
+out
+
+```

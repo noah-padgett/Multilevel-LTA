@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: SERA_2018_paper.aux
+The style file: apacite.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: Refs.bib
+I was expecting a `,' or a `}'---line 245 of file Refs.bib
+ :   
+ :   editor      = "Hancock, Greg R. and Mueller, Ralph O."
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+apacite.bst [2013/07/21 v6.03 APA bibliography style]
+You've used 1 entry,
+            6951 wiz_defined-function locations,
+            1275 strings with 10821 characters,
+and the built_in function-call counts, 1858 in all, are:
+= -- 254
+> -- 18
+< -- 46
++ -- 44
+- -- 2
+* -- 91
+:= -- 270
+add.period$ -- 6
+call.type$ -- 1
+change.case$ -- 18
+chr.to.int$ -- 0
+cite$ -- 2
+duplicate$ -- 51
+empty$ -- 88
+format.name$ -- 24
+if$ -- 400
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 0
+newline$ -- 30
+num.names$ -- 8
+pop$ -- 52
+preamble$ -- 1
+purify$ -- 4
+quote$ -- 0
+skip$ -- 157
+stack$ -- 0
+substring$ -- 58
+swap$ -- 35
+text.length$ -- 7
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 144
+warning$ -- 0
+while$ -- 8
+width$ -- 0
+write$ -- 35
+(There was 1 error message)

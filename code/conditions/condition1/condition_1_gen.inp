@@ -1,0 +1,68 @@
+
+
+TITLE:  Obligatory BS title;
+
+  MONTECARLO:
+    	NAMES = u1-u4 u21-u24;
+      GENERATE = u1-u4 u21-u24 (1);
+      CATEGORICAL = u1-u4 u21-u24;
+    	GENCLASSES = c1(2) c2(2);
+    	CLASSES = c1(2) c2(2);
+    	NOBSERVATION = 1000;
+    	ncsizes = 1;
+    	csizes = 50 (20);
+    	NREPS = 5; !100;
+      seed=656709;
+      save = condition1_rep*.dat;
+      repsave = ALL;
+
+  ANALYSIS:
+    	TYPE=TWOLEVEL MIXTURE;
+        STARTS = 20 2;
+  MODEL POPULATION:
+        %WITHIN%
+    	%OVERALL%
+         ! regress time 2 on time 1 -> level-1 multinomial regression
+         c2#1 ON c1#1*4;
+         ! time 1 intercept
+         [ c1#1*-.405 ]; !time 1 logit
+         ! time 2 intercept (mu)
+         [ c2#1*-2.5];
+
+  %BETWEEN%
+    	%OVERALL%
+    	c2#1 on c1#1*0.3;
+
+       c1#1*0.80;
+       c2#1*0.25;
+
+    ! next define the measurement model of the within class response
+    !   patterns - wil depend on model structure
+    MODEL POPULATION-c1:
+    %BETWEEN%
+     
+        %c1#1%
+    	 [u1$1*1.386]  ;
+    	 [u2$1*-0.405] ;
+    	 [u3$1*-1.386] ;
+    	 [u4$1*-15]    ;
+
+        %c1#2%
+    	 [u1$1*2.944]   ;
+    	 [u2$1*2.197]   ;
+    	 [u3$1*0.00]    ;
+    	 [u4$1*-0.847]  ;
+
+    MODEL POPULATION-c2:
+    %BETWEEN%
+        %c2#1%
+    	 [u21$1*1.734]  ;
+    	 [u22$1*-0.241] ;
+    	 [u23$1*-1.208] ;
+    	 [u24$1*-1.386] ;
+
+        %c2#2%
+    	 [u21$1*3.476]  ;
+    	 [u22$1*2.442]  ;
+    	 [u23$1*-0.080] ;
+    	 [u24$1*-0.619] ;

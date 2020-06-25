@@ -1,0 +1,98 @@
+TITLE: 		Four class FMM
+
+DATA:  		FILE IS fmm_1.dat;
+
+VARIABLE:
+			NAMES ARE tc y1-y4;
+			USEVARIABLES ARE y1-y4;
+			IDVAR IS tc;
+
+			CLASSES = c(4);
+
+ANALYSIS: 	TYPE = MIXTURE;
+			ITERATIONS = 500;
+			STARTS = 200 100;
+			STITERATIONS = 5;
+			STSCALE = 5;
+			STSEED = 198;
+
+MODEL:
+%OVERALL%
+! factor loadings
+F1 by y1-y4;
+! factor mean
+[f1];
+! factor variance
+f1;
+
+%c#1%
+! factor loadings (class invariant)
+F1 by y1@1
+	  y2 (1)
+	  y3 (2)
+	  y4 (3);
+! factor mean
+[f1];
+! factor variance
+f1;
+! indicator means (fixed at zero)
+[y1-y4@0];
+! residual variances (class specific)
+y1-y4;
+
+%c#2%
+! factor loadings (class invariant)
+F1 by y1@1
+	  y2 (1)
+	  y3 (2)
+	  y4 (3);
+! factor mean
+[f1];
+! factor variance
+f1;
+! indicator means (fixed at zero)
+[y1-y4@0];
+! residual variances (class specific)
+y1-y4;
+
+%c#3%
+! factor loadings (class invariant)
+F1 by y1@1
+	  y2 (1)
+	  y3 (2)
+	  y4 (3);
+! factor mean
+[f1];
+! factor variance
+f1;
+! indicator means (fixed at zero)
+[y1-y4@0];
+! residual variances (class variant)
+y1-y4;
+
+%c#4%
+! factor loadings (class invariant)
+F1 by y1@1
+	  y2 (1)
+	  y3 (2)
+	  y4 (3);
+! factor mean - reference class, fix at zero for identification
+[f1@0];
+! factor variance
+f1;
+! indicator means (fixed at zero)
+[y1-y4@0];
+! residual variances (class specific)
+y1-y4;
+
+
+
+
+
+SAVEDATA:       Results are fmm_dat1.par;
+				FILE IS fmm_dat1.pro;
+				SAVE IS CPROBABILITIES;
+
+OUTPUT: tech1 tech4;
+
+

@@ -1,0 +1,157 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[ht]
+\centering
+\scriptsize
+\begin{tikzpicture}[auto,scale=2,
+latent/.style={circle,draw,thick,inner sep=0pt,minimum size=20mm},
+error/.style={circle,inner sep=0pt,minimum size=10mm},
+manifest/.style={rectangle,draw,thick,inner sep=0pt,minimum size=10mm},
+corr/.style={<->,>=stealth', bend right=30},
+intercept/.style={regular polygon,
+        regular polygon sides=3,draw,thick,inner sep=0pt,minimum size=10mm},
+mean/.style={regular polygon,regular polygon sides=3,draw,thick,inner sep=0pt,minimum size=20mm},
+paths/.style={->, thick, >=stealth'},
+variance/.style={<->, thick, >=stealth', bend left=270},
+varianceTop/.style={<->, thick, >=stealth', bend right=270, looseness=2},
+unique/.style={<->, thick, >=stealth', loop above=270, looseness=8},
+factvar/.style={<->, thick, >=stealth', loop below=90, looseness=8},
+ghost/.style={rectangle,draw,thick,inner sep=0pt,minimum size=0mm},
+dots/.style={rectangle,draw,thick,inner sep=0pt,minimum size=2mm, color=white, text=black}
+]
+\tikzset{mystyle/.style={->,double=black}}
+\node [latent] (c1) {$C_1$};
+
+
+\node [manifest] (u2)  [above = 1in of c1] {$\textrm{U}_{2,1}$};
+\node [manifest] (u1)  [left = .1in of u2]  {$\textrm{U}_{1,1}$};
+\node [manifest] (u3)  [right = .1in of u2]  {$\textrm{U}_{3,1}$};
+\node [dots] (dots1)  [right = .1in of u3]  {$\cdots$};
+\node [manifest] (u4)  [right = .1in of dots1]  {$\textrm{U}_{m,1}$};
+
+\node [manifest] (u5)  [right = .5in of u4]  {$\textrm{U}_{1,2}$};
+\node [manifest] (u6)  [right = .1in of u5] {$\textrm{U}_{2,2}$};
+\node [manifest] (u7)  [right = .1in of u6]  {$\textrm{U}_{3,2}$};
+\node [dots] (dots2)  [right = .1in of u7]  {$\cdots$};
+\node [manifest] (u8)  [right = .1in of dots2]  {$\textrm{U}_{m,2}$};
+
+\node [latent] (c2) [below = 1in of u7] {$C_2$};
+
+\node [latent] (a1) [below = 1in of c1] {$\alpha_1$};
+\node [latent] (a2) [below = 1in of c2] {$\alpha_2$};
+
+\draw [paths] (c1) to node {} (u1.south);
+\draw [paths] (c1) to node {} (u2.south);
+\draw [paths] (c1) to node {} (u3.south);
+\draw [paths] (c1) to node {} (u4.south);
+\draw [paths] (c2) to node {} (u5.south);
+\draw [paths] (c2) to node {} (u6.south);
+\draw [paths] (c2) to node {} (u7.south);
+\draw [paths] (c2) to node {} (u8.south);
+
+\draw [paths] (c1) to node {$\gamma_{dcj}$} (c2.west);
+\draw [paths] (a1) to node {$\beta_{2dj}$} (a2.west);
+\draw [paths] (a1) to node {} (c1.south);
+\draw [paths] (a2) to node {} (c2.south);
+
+\draw [factvar] (a1) to node {$\textrm{var}\left(\alpha_1\right)$} (a1);
+\draw [factvar] (a2) to node {$\textrm{var}\left(\alpha_2\right)$} (a2);
+\end{tikzpicture}
+\caption{Conceptual diagram of a multilevel latent transition model with two time points and $m$ latent class indicators at each time point.}\label{fig:pathModel-MLTA}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[ht]
+\centering
+\scriptsize
+\begin{tikzpicture}[auto,scale=2,
+latent/.style={circle,draw,thick,inner sep=0pt,minimum size=20mm},
+error/.style={circle,inner sep=0pt,minimum size=10mm},
+manifest/.style={rectangle,draw,thick,inner sep=0pt,minimum size=10mm},
+corr/.style={<->,>=stealth', bend right=30},
+intercept/.style={regular polygon,
+        regular polygon sides=3,draw,thick,inner sep=0pt,minimum size=10mm},
+mean/.style={regular polygon,regular polygon sides=3,draw,thick,inner sep=0pt,minimum size=20mm},
+paths/.style={->, thick, >=stealth'},
+variance/.style={<->, thick, >=stealth', bend left=270},
+varianceTop/.style={<->, thick, >=stealth', bend right=270, looseness=2},
+unique/.style={<->, thick, >=stealth', loop above=270, looseness=8},
+factvar/.style={<->, thick, >=stealth', loop below=90, looseness=8},
+ghost/.style={rectangle,draw,thick,inner sep=0pt,minimum size=0mm},
+dots/.style={rectangle,draw,thick,inner sep=0pt,minimum size=2mm, color=white, text=black}
+]
+\tikzset{mystyle/.style={->,double=black}}
+\node[latent](c1) {$C_1$};
+
+\node[manifest] (u2) [above = 1in of c1] {$U_{2,1}$};
+\node[manifest](u1) [left = .1in of u2] {$U_{1,1}$};
+\node[manifest](u3) [right = .1in of u2] {$U_{3,1}$};
+\node[dots](dots1) [right = .1in of u3] {$\cdots$};
+\node[manifest](u4) [right = .1in of dots1] {$U_{10,1}$};
+
+\node[manifest](u5) [right = .5in of u4] {$U_{1,2}$};
+\node[manifest](u6) [right = .1in of u5] {$U_{2,2}$};
+\node[manifest](u7) [right = .1in of u6] {$U_{3,2}$};
+\node[dots](dots2) [right = .1in of u7] {$\cdots$};
+\node[manifest](u8) [right = .1in of dots2] {$U_{10,2}$};
+
+\node[latent](c2)[below = 1in of u7] {$C_2$};
+
+\node[latent](a1)[below = 1in of c1]{$\alpha_1$};
+\node[latent](a2)[below = 1in of c2]{$\alpha_2$};
+
+\draw[paths](c1) to node{}(u1.south);
+\draw[paths](c1) to node{}(u2.south);
+\draw[paths](c1) to node{}(u3.south);
+\draw[paths](c1) to node{}(u4.south);
+
+\draw[paths](c2) to node{}(u5.south);
+\draw[paths](c2) to node{}(u6.south);
+\draw[paths](c2) to node{}(u7.south);
+\draw[paths](c2) to node{}(u8.south);
+
+\draw[paths](c1) to node{$\gamma_{dcj}=\{1, 2, 3.5\}$}(c2.west);
+\draw[paths](a1) to node{$\beta_{2dj}=\{0.1, 0.3, 0.5\}$}(a2.west);
+
+\draw[paths](a1) to node{}(c1.south);
+\draw[paths](a2) to node{}(c2.south);
+
+\draw[factvar](a1) to node{$\textrm{var}(\alpha_1)=2$}(a1);
+\draw[factvar](a2) to node{$\textrm{var}(\alpha_2)=\{0, .25,.5  \}$}(a2);
+
+\node[ghost](shh) [right = .25in of u4] {};
+\node[dots](blank)[below = 4.75in of shh] {$\textrm{Sample Sizes}=\{50/10,50/20,25/25,100/5 \}$};
+\end{tikzpicture}
+\caption{Path diagram of a multilevel latent transition model with manipulated levels of design factors.}\label{fig:designfactors}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[ht]
+\centering
+\includegraphics[scale=1]{truegamma.eps}
+\caption{Boxplots of relative bias in standard errors for the $\gamma$ parameter.}\label{fig:truegamma}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[ht]
+\centering
+\includegraphics[scale=.5]{gammabysamp.eps}
+\caption{Boxplots of relative bias in standard errors for the $\gamma$ parameter by sample size interaction.}\label{fig:gammabysamp}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[ht]
+\centering
+\includegraphics[scale=.5]{gammabyalpha2.eps}
+\caption{Boxplots of relative bias in standard errors for the $\gamma$ parameter by level-2 variance interaction.}\label{fig:gammabyalpha2}
+\end{figure*}
+\efloatseparator
+ 

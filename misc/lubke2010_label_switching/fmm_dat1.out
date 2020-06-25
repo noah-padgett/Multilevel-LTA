@@ -1,0 +1,1010 @@
+Mplus VERSION 5.21
+MUTHEN & MUTHEN
+08/21/2009  11:31 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:                 Four class FMM
+
+  DATA:                  FILE IS fmm_1.dat;
+
+  VARIABLE:
+                          NAMES ARE tc y1-y4;
+                          USEVARIABLES ARE y1-y4;
+                          IDVAR IS tc;
+
+                          CLASSES = c(4);
+
+  ANALYSIS:         TYPE = MIXTURE;
+                          ITERATIONS = 500;
+                          STARTS = 200 100;
+                          STITERATIONS = 5;
+                          STSCALE = 5;
+                          STSEED = 198;
+
+  MODEL:
+  %OVERALL%
+  ! factor loadings
+  F1 by y1-y4;
+  ! factor mean
+  [f1];
+  ! factor variance
+  f1;
+
+  %c#1%
+  ! factor loadings (class invariant)
+  F1 by y1@1
+            y2 (1)
+            y3 (2)
+            y4 (3);
+  ! factor mean
+  [f1];
+  ! factor variance
+  f1;
+  ! indicator means (fixed at zero)
+  [y1-y4@0];
+  ! residual variances (class specific)
+  y1-y4;
+
+  %c#2%
+  ! factor loadings (class invariant)
+  F1 by y1@1
+            y2 (1)
+            y3 (2)
+            y4 (3);
+  ! factor mean
+  [f1];
+  ! factor variance
+  f1;
+  ! indicator means (fixed at zero)
+  [y1-y4@0];
+  ! residual variances (class specific)
+  y1-y4;
+
+  %c#3%
+  ! factor loadings (class invariant)
+  F1 by y1@1
+            y2 (1)
+            y3 (2)
+            y4 (3);
+  ! factor mean
+  [f1];
+  ! factor variance
+  f1;
+  ! indicator means (fixed at zero)
+  [y1-y4@0];
+  ! residual variances (class variant)
+  y1-y4;
+
+  %c#4%
+  ! factor loadings (class invariant)
+  F1 by y1@1
+            y2 (1)
+            y3 (2)
+            y4 (3);
+  ! factor mean - reference class, fix at zero for identification
+  [f1@0];
+  ! factor variance
+  f1;
+  ! indicator means (fixed at zero)
+  [y1-y4@0];
+  ! residual variances (class specific)
+  y1-y4;
+
+
+
+
+
+  SAVEDATA:       Results are fmm_dat1.par;
+                                  FILE IS fmm_dat1.pro;
+                                  SAVE IS CPROBABILITIES;
+
+  OUTPUT: tech1 tech4;
+
+
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+Four class FMM
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         942
+
+Number of dependent variables                                    4
+Number of independent variables                                  0
+Number of continuous latent variables                            1
+Number of categorical latent variables                           1
+
+Observed dependent variables
+
+  Continuous
+   Y1          Y2          Y3          Y4
+
+Continuous latent variables
+   F1
+
+Categorical latent variables
+   C
+
+Variables with special functions
+
+  ID variable           TC
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Optimization Specifications for the Quasi-Newton Algorithm for
+Continuous Outcomes
+  Maximum number of iterations                                 500
+  Convergence criterion                                  0.100D-05
+Optimization Specifications for the EM Algorithm
+  Maximum number of iterations                                 500
+  Convergence criteria
+    Loglikelihood change                                 0.100D-06
+    Relative loglikelihood change                        0.100D-06
+    Derivative                                           0.100D-05
+Optimization Specifications for the M step of the EM Algorithm for
+Categorical Latent variables
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+Optimization Specifications for the M step of the EM Algorithm for
+Censored, Binary or Ordered Categorical (Ordinal), Unordered
+Categorical (Nominal) and Count Outcomes
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+  Maximum value for logit thresholds                            15
+  Minimum value for logit thresholds                           -15
+  Minimum expected cell size for chi-square              0.100D-01
+Optimization algorithm                                         EMA
+Random Starts Specifications
+  Number of initial stage random starts                        200
+  Number of final stage optimizations                          100
+  Number of initial stage iterations                             5
+  Initial stage convergence criterion                    0.100D+01
+  Random starts scale                                    0.500D+01
+  Random seed for generating random starts                     198
+
+Input data file(s)
+  fmm_1.dat
+Input data format  FREE
+
+
+RANDOM STARTS RESULTS RANKED FROM THE BEST TO THE WORST LOGLIKELIHOOD VALUES
+
+24 perturbed starting value run(s) did not converge in the initial stage
+optimizations.
+
+Final stage loglikelihood values at local maxima, seeds, and initial stage start numbers:
+
+           -5078.377  7104             148
+           -5078.377  892800           135
+           -5078.377  239858           120
+           -5078.377  697027           108
+           -5078.377  402468           136
+           -5078.377  784692           151
+           -5078.377  106097           86
+           -5078.377  907715           90
+           -5078.377  263453           48
+           -5078.377  423180           113
+           -5078.377  282947           199
+           -5078.377  830087           100
+           -5078.377  863112           37
+           -5078.377  66694            167
+           -5078.377  418997           9
+           -5078.377  877216           47
+           -5078.377  267755           158
+           -5078.377  441479           96
+           -5078.377  289640           191
+           -5078.377  395355           198
+           -5078.377  121952           188
+           -5078.377  5623             173
+           -5078.377  841652           170
+           -5078.377  763865           81
+           -5078.377  239099           12
+           -5078.377  647908           79
+           -5078.377  328621           42
+           -5078.377  706552           165
+           -5078.377  349398           127
+           -5245.664  726833           117
+           -5254.550  626011           161
+           -5259.167  492143           175
+           -5261.194  717278           121
+           -5261.859  32111            92
+           -5261.859  355555           94
+           -5262.271  198203           29
+           -5266.595  470203           22
+           -5266.595  858802           66
+           -5266.595  443024           128
+           -5268.165  480302           19
+           -5271.137  562919           183
+           -5271.830  739843           26
+           -5273.578  470342           18
+           -5273.578  691341           3
+           -5273.578  988299           189
+           -5279.266  960279           28
+           -5279.266  370472           110
+           -5279.266  505082           15
+           -5279.266  85855            95
+           -5281.540  391382           104
+           -5281.606  66612            176
+           -5281.606  913605           62
+           -5281.606  865939           41
+           -5281.606  264708           181
+           -5281.606  678422           129
+           -5281.606  423636           83
+           -5286.444  875831           32
+           -5286.444  988251           84
+           -5286.444  72564            1
+           -5286.444  372807           53
+           -5286.444  537137           179
+           -5286.444  899645           56
+           -5301.872  696929           150
+           -5302.184  177324           107
+           -5303.309  283986           93
+           -5304.830  926776           103
+           -5307.787  87008            102
+           -5307.787  392957           144
+           -5307.787  116204           111
+           -5307.787  940195           72
+           -5307.787  277982           200
+           -5307.787  933488           35
+           -5307.787  464210           130
+           -5309.744  758646           166
+           -5310.672  536421           33
+           -5312.188  121797           77
+           -5317.947  932113           153
+           -5317.947  346446           45
+           -5317.947  836666           196
+           -5384.129  282521           152
+           -5386.003  366649           194
+           -5386.003  588566           160
+           -5389.369  522942           59
+           -5393.386  856051           168
+           -5397.530  530223           139
+           -5427.926  960604           106
+           -5427.926  995329           154
+
+13 perturbed starting value run(s) did not converge.
+
+
+
+     WARNING:  WHEN ESTIMATING A MODEL WITH MORE THAN TWO CLASSES, IT MAY BE
+     NECESSARY TO INCREASE THE NUMBER OF RANDOM STARTS USING THE STARTS OPTION
+     TO AVOID LOCAL MAXIMA.
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+TESTS OF MODEL FIT
+
+Loglikelihood
+
+          H0 Value                       -5078.377
+          H0 Scaling Correction Factor       1.010
+            for MLR
+
+Information Criteria
+
+          Number of Free Parameters             29
+          Akaike (AIC)                   10214.755
+          Bayesian (BIC)                 10355.347
+          Sample-Size Adjusted BIC       10263.245
+            (n* = (n + 2) / 24)
+
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THE ESTIMATED MODEL
+
+    Latent
+   Classes
+
+       1        316.46447          0.33595
+       2        287.91226          0.30564
+       3        144.71912          0.15363
+       4        192.90415          0.20478
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASS PATTERNS
+BASED ON ESTIMATED POSTERIOR PROBABILITIES
+
+    Latent
+   Classes
+
+       1        316.46447          0.33595
+       2        287.91226          0.30564
+       3        144.71912          0.15363
+       4        192.90415          0.20478
+
+
+CLASSIFICATION QUALITY
+
+     Entropy                         0.957
+
+
+CLASSIFICATION OF INDIVIDUALS BASED ON THEIR MOST LIKELY LATENT CLASS MEMBERSHIP
+
+Class Counts and Proportions
+
+    Latent
+   Classes
+
+       1              317          0.33652
+       2              290          0.30786
+       3              145          0.15393
+       4              190          0.20170
+
+
+Average Latent Class Probabilities for Most Likely Latent Class Membership (Row)
+by Latent Class (Column)
+
+           1        2        3        4
+
+    1   0.977    0.000    0.000    0.023
+    2   0.000    0.985    0.000    0.015
+    3   0.000    0.002    0.998    0.000
+    4   0.035    0.011    0.000    0.954
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Latent Class 1
+
+ F1       BY
+    Y1                 1.000      0.000    999.000    999.000
+    Y2                 0.798      0.005    170.124      0.000
+    Y3                 0.799      0.005    171.463      0.000
+    Y4                 0.800      0.005    173.263      0.000
+
+ Means
+    F1                -4.048      0.070    -57.812      0.000
+
+ Intercepts
+    Y1                 0.000      0.000    999.000    999.000
+    Y2                 0.000      0.000    999.000    999.000
+    Y3                 0.000      0.000    999.000    999.000
+    Y4                 0.000      0.000    999.000    999.000
+
+ Variances
+    F1                 0.861      0.107      8.078      0.000
+
+ Residual Variances
+    Y1                 0.284      0.033      8.738      0.000
+    Y2                 0.274      0.031      8.913      0.000
+    Y3                 0.220      0.022      9.977      0.000
+    Y4                 0.335      0.034      9.890      0.000
+
+Latent Class 2
+
+ F1       BY
+    Y1                 1.000      0.000    999.000    999.000
+    Y2                 0.798      0.005    170.124      0.000
+    Y3                 0.799      0.005    171.463      0.000
+    Y4                 0.800      0.005    173.263      0.000
+
+ Means
+    F1                 3.984      0.042     95.129      0.000
+
+ Intercepts
+    Y1                 0.000      0.000    999.000    999.000
+    Y2                 0.000      0.000    999.000    999.000
+    Y3                 0.000      0.000    999.000    999.000
+    Y4                 0.000      0.000    999.000    999.000
+
+ Variances
+    F1                 0.244      0.041      5.893      0.000
+
+ Residual Variances
+    Y1                 0.274      0.029      9.410      0.000
+    Y2                 0.282      0.028     10.037      0.000
+    Y3                 0.287      0.026     10.943      0.000
+    Y4                 0.310      0.031      9.889      0.000
+
+Latent Class 3
+
+ F1       BY
+    Y1                 1.000      0.000    999.000    999.000
+    Y2                 0.798      0.005    170.124      0.000
+    Y3                 0.799      0.005    171.463      0.000
+    Y4                 0.800      0.005    173.263      0.000
+
+ Means
+    F1                 8.059      0.064    125.338      0.000
+
+ Intercepts
+    Y1                 0.000      0.000    999.000    999.000
+    Y2                 0.000      0.000    999.000    999.000
+    Y3                 0.000      0.000    999.000    999.000
+    Y4                 0.000      0.000    999.000    999.000
+
+ Variances
+    F1                 0.432      0.068      6.331      0.000
+
+ Residual Variances
+    Y1                 0.219      0.037      5.835      0.000
+    Y2                 0.274      0.034      8.078      0.000
+    Y3                 0.294      0.045      6.521      0.000
+    Y4                 0.280      0.041      6.804      0.000
+
+Latent Class 4
+
+ F1       BY
+    Y1                 1.000      0.000    999.000    999.000
+    Y2                 0.798      0.005    170.124      0.000
+    Y3                 0.799      0.005    171.463      0.000
+    Y4                 0.800      0.005    173.263      0.000
+
+ Means
+    F1                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    Y1                 0.000      0.000    999.000    999.000
+    Y2                 0.000      0.000    999.000    999.000
+    Y3                 0.000      0.000    999.000    999.000
+    Y4                 0.000      0.000    999.000    999.000
+
+ Variances
+    F1                 1.308      0.328      3.985      0.000
+
+ Residual Variances
+    Y1                 0.244      0.044      5.606      0.000
+    Y2                 0.299      0.041      7.241      0.000
+    Y3                 0.279      0.037      7.655      0.000
+    Y4                 0.293      0.046      6.433      0.000
+
+Categorical Latent Variables
+
+ Means
+    C#1                0.495      0.118      4.179      0.000
+    C#2                0.400      0.115      3.475      0.001
+    C#3               -0.287      0.122     -2.348      0.019
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.138E-03
+       (ratio of smallest to largest eigenvalue)
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 1
+
+
+           NU
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ 1                  0             0             0             0
+
+
+           LAMBDA
+              F1
+              ________
+ Y1                 0
+ Y2                 1
+ Y3                 2
+ Y4                 3
+
+
+           THETA
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ Y1                 4
+ Y2                 0             5
+ Y3                 0             0             6
+ Y4                 0             0             0             7
+
+
+           ALPHA
+              F1
+              ________
+ 1                  8
+
+
+           BETA
+              F1
+              ________
+ F1                 0
+
+
+           PSI
+              F1
+              ________
+ F1                 9
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 2
+
+
+           NU
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ 1                  0             0             0             0
+
+
+           LAMBDA
+              F1
+              ________
+ Y1                 0
+ Y2                 1
+ Y3                 2
+ Y4                 3
+
+
+           THETA
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ Y1                10
+ Y2                 0            11
+ Y3                 0             0            12
+ Y4                 0             0             0            13
+
+
+           ALPHA
+              F1
+              ________
+ 1                 14
+
+
+           BETA
+              F1
+              ________
+ F1                 0
+
+
+           PSI
+              F1
+              ________
+ F1                15
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 3
+
+
+           NU
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ 1                  0             0             0             0
+
+
+           LAMBDA
+              F1
+              ________
+ Y1                 0
+ Y2                 1
+ Y3                 2
+ Y4                 3
+
+
+           THETA
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ Y1                16
+ Y2                 0            17
+ Y3                 0             0            18
+ Y4                 0             0             0            19
+
+
+           ALPHA
+              F1
+              ________
+ 1                 20
+
+
+           BETA
+              F1
+              ________
+ F1                 0
+
+
+           PSI
+              F1
+              ________
+ F1                21
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 4
+
+
+           NU
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ 1                  0             0             0             0
+
+
+           LAMBDA
+              F1
+              ________
+ Y1                 0
+ Y2                 1
+ Y3                 2
+ Y4                 3
+
+
+           THETA
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ Y1                22
+ Y2                 0            23
+ Y3                 0             0            24
+ Y4                 0             0             0            25
+
+
+           ALPHA
+              F1
+              ________
+ 1                  0
+
+
+           BETA
+              F1
+              ________
+ F1                 0
+
+
+           PSI
+              F1
+              ________
+ F1                26
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS REGRESSION MODEL PART
+
+
+           ALPHA(C)
+              C#1           C#2           C#3           C#4
+              ________      ________      ________      ________
+ 1                 27            28            29             0
+
+
+     STARTING VALUES FOR LATENT CLASS 1
+
+
+           NU
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ 1              0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              F1
+              ________
+ Y1             1.000
+ Y2             1.000
+ Y3             1.000
+ Y4             1.000
+
+
+           THETA
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ Y1            10.060
+ Y2             0.000         6.456
+ Y3             0.000         0.000         6.470
+ Y4             0.000         0.000         0.000         6.553
+
+
+           ALPHA
+              F1
+              ________
+ 1              0.000
+
+
+           BETA
+              F1
+              ________
+ F1             0.000
+
+
+           PSI
+              F1
+              ________
+ F1             0.050
+
+
+     STARTING VALUES FOR LATENT CLASS 2
+
+
+           NU
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ 1              0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              F1
+              ________
+ Y1             1.000
+ Y2             1.000
+ Y3             1.000
+ Y4             1.000
+
+
+           THETA
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ Y1            10.060
+ Y2             0.000         6.456
+ Y3             0.000         0.000         6.470
+ Y4             0.000         0.000         0.000         6.553
+
+
+           ALPHA
+              F1
+              ________
+ 1              0.000
+
+
+           BETA
+              F1
+              ________
+ F1             0.000
+
+
+           PSI
+              F1
+              ________
+ F1             0.050
+
+
+     STARTING VALUES FOR LATENT CLASS 3
+
+
+           NU
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ 1              0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              F1
+              ________
+ Y1             1.000
+ Y2             1.000
+ Y3             1.000
+ Y4             1.000
+
+
+           THETA
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ Y1            10.060
+ Y2             0.000         6.456
+ Y3             0.000         0.000         6.470
+ Y4             0.000         0.000         0.000         6.553
+
+
+           ALPHA
+              F1
+              ________
+ 1              0.000
+
+
+           BETA
+              F1
+              ________
+ F1             0.000
+
+
+           PSI
+              F1
+              ________
+ F1             0.050
+
+
+     STARTING VALUES FOR LATENT CLASS 4
+
+
+           NU
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ 1              0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              F1
+              ________
+ Y1             1.000
+ Y2             1.000
+ Y3             1.000
+ Y4             1.000
+
+
+           THETA
+              Y1            Y2            Y3            Y4
+              ________      ________      ________      ________
+ Y1            10.060
+ Y2             0.000         6.456
+ Y3             0.000         0.000         6.470
+ Y4             0.000         0.000         0.000         6.553
+
+
+           ALPHA
+              F1
+              ________
+ 1              0.000
+
+
+           BETA
+              F1
+              ________
+ F1             0.000
+
+
+           PSI
+              F1
+              ________
+ F1             0.050
+
+
+     STARTING VALUES FOR LATENT CLASS REGRESSION MODEL PART
+
+
+           ALPHA(C)
+              C#1           C#2           C#3           C#4
+              ________      ________      ________      ________
+ 1              0.000         0.000         0.000         0.000
+
+
+TECHNICAL 4 OUTPUT
+
+
+     ESTIMATES DERIVED FROM THE MODEL FOR CLASS 1
+
+
+           ESTIMATED MEANS FOR THE LATENT VARIABLES
+              F1
+              ________
+ 1             -4.048
+
+
+           ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              F1
+              ________
+ F1             0.861
+
+
+           ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              F1
+              ________
+ F1             1.000
+
+
+     ESTIMATES DERIVED FROM THE MODEL FOR CLASS 2
+
+
+           ESTIMATED MEANS FOR THE LATENT VARIABLES
+              F1
+              ________
+ 1              3.984
+
+
+           ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              F1
+              ________
+ F1             0.244
+
+
+           ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              F1
+              ________
+ F1             1.000
+
+
+     ESTIMATES DERIVED FROM THE MODEL FOR CLASS 3
+
+
+           ESTIMATED MEANS FOR THE LATENT VARIABLES
+              F1
+              ________
+ 1              8.059
+
+
+           ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              F1
+              ________
+ F1             0.432
+
+
+           ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              F1
+              ________
+ F1             1.000
+
+
+     ESTIMATES DERIVED FROM THE MODEL FOR CLASS 4
+
+
+           ESTIMATED MEANS FOR THE LATENT VARIABLES
+              F1
+              ________
+ 1              0.000
+
+
+           ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              F1
+              ________
+ F1             1.308
+
+
+           ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              F1
+              ________
+ F1             1.000
+
+
+RESULTS SAVING INFORMATION
+
+  Order of data
+
+    Parameter estimates
+     (saved in order shown in Technical 1 output)
+    Standard errors
+     (saved in order shown in Technical 1 output)
+    H0 Loglikelihood
+    H0 Scaling Correction Factor for MLR
+    Number of Free Parameters
+    Akaike (AIC)
+    Bayesian (BIC)
+    Sample-Size Adjusted BIC
+    Entropy
+
+  Save file
+    fmm_dat1.par
+
+  Save file format           Free
+
+
+SAVEDATA INFORMATION
+
+  Order and format of variables
+
+    Y1             F10.3
+    Y2             F10.3
+    Y3             F10.3
+    Y4             F10.3
+    TC             I2
+    CPROB1         F10.3
+    CPROB2         F10.3
+    CPROB3         F10.3
+    CPROB4         F10.3
+    C              F10.3
+
+  Save file
+    fmm_dat1.pro
+
+  Save file format
+    4F10.3 I2 5F10.3
+
+  Save file record length    5000
+
+
+     Beginning Time:  11:31:30
+        Ending Time:  11:33:28
+       Elapsed Time:  00:01:58
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2009 Muthen & Muthen

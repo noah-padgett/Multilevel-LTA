@@ -1,0 +1,6 @@
+file isSquare areRsum>0 areCsum>0 isNotClpsd K-1>tol? whichAlgo
+C:/Users/noahp/Box/Research/Morgan-Padgett/Multilevel-LTA/code/conditions/condition1/results_conditions1_rep1.pro FALSE TRUE TRUE TRUE NA NA
+C:/Users/noahp/Box/Research/Morgan-Padgett/Multilevel-LTA/code/conditions/condition1/results_conditions1_rep2.pro FALSE TRUE TRUE TRUE NA NA
+C:/Users/noahp/Box/Research/Morgan-Padgett/Multilevel-LTA/code/conditions/condition1/results_conditions1_rep3.pro FALSE TRUE TRUE TRUE NA NA
+C:/Users/noahp/Box/Research/Morgan-Padgett/Multilevel-LTA/code/conditions/condition1/results_conditions1_rep4.pro FALSE TRUE TRUE TRUE NA NA
+C:/Users/noahp/Box/Research/Morgan-Padgett/Multilevel-LTA/code/conditions/condition1/results_conditions1_rep5.pro FALSE TRUE TRUE TRUE NA NA

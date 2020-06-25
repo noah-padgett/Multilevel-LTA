@@ -1,0 +1,548 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/global//global/global}
+    \entry{Asparouhov2008}{inbook}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=ad1e5668a6a4f83a6133c359f579c441}{%
+           family={Asparouhov},
+           familyi={A\bibinitperiod},
+           given={Tihomir},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fa213ffcf8a716b9b4b861af0fcfabc6}{%
+           family={Muth{é}n},
+           familyi={M\bibinitperiod},
+           given={Bengt},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=234b7952ec4d77ca2491b6c76fe32ffa}{%
+           family={Hancock},
+           familyi={H\bibinitperiod},
+           given={Greg\bibnamedelima R.},
+           giveni={G\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=8335dd75844b2afdb084cbf946b77eba}{%
+           family={Mueller},
+           familyi={M\bibinitperiod},
+           given={Ralph\bibnamedelima O.},
+           giveni={R\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Information Age Charlotte, NC}%
+      }
+      \strng{namehash}{3ab59d2e097cd9679502f0ea720ff4d1}
+      \strng{fullhash}{3ab59d2e097cd9679502f0ea720ff4d1}
+      \strng{bibnamehash}{3ab59d2e097cd9679502f0ea720ff4d1}
+      \strng{authorbibnamehash}{3ab59d2e097cd9679502f0ea720ff4d1}
+      \strng{authornamehash}{3ab59d2e097cd9679502f0ea720ff4d1}
+      \strng{authorfullhash}{3ab59d2e097cd9679502f0ea720ff4d1}
+      \strng{editorbibnamehash}{25d1038969be23a11054c33c9f13f114}
+      \strng{editornamehash}{25d1038969be23a11054c33c9f13f114}
+      \strng{editorfullhash}{25d1038969be23a11054c33c9f13f114}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in latent variable mixture models}
+      \field{title}{Multilevel mixture models}
+      \field{year}{2008}
+      \field{pages}{27\bibrangedash 51}
+      \range{pages}{25}
+    \endentry
+    \entry{Auerbach2006}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=2a0a3d811e252fedac31843a1e13b027}{%
+           family={Auerbach},
+           familyi={A\bibinitperiod},
+           given={Karen\bibnamedelima J.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=84c53770f3aebbb2ccea5b19140ffb46}{%
+           family={Collins},
+           familyi={C\bibinitperiod},
+           given={Linda\bibnamedelima M.},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Alcohol Research Documentation Inc.}%
+      }
+      \strng{namehash}{352f6231aadbb8ce80f4b528bec81125}
+      \strng{fullhash}{352f6231aadbb8ce80f4b528bec81125}
+      \strng{bibnamehash}{352f6231aadbb8ce80f4b528bec81125}
+      \strng{authorbibnamehash}{352f6231aadbb8ce80f4b528bec81125}
+      \strng{authornamehash}{352f6231aadbb8ce80f4b528bec81125}
+      \strng{authorfullhash}{352f6231aadbb8ce80f4b528bec81125}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Studies on Alcohol}
+      \field{number}{6}
+      \field{title}{{A multidimensional developmental model of alcohol use during emerging adulthood}}
+      \field{volume}{67}
+      \field{year}{2006}
+      \field{pages}{917\bibrangedash 925}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.15288/jsa.2006.67.917
+      \endverb
+    \endentry
+    \entry{Hedges2007}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7d830e562fdeb21242e790204147b207}{%
+           family={Hedges},
+           familyi={H\bibinitperiod},
+           given={Larry\bibnamedelima V},
+           giveni={L\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f56a2c675b83db5b8df391439f7d3c15}{%
+           family={Hedberg},
+           familyi={H\bibinitperiod},
+           given={E\bibnamedelima C},
+           giveni={E\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7f456cc9062cf6c1963fdb552b3beca7}
+      \strng{fullhash}{7f456cc9062cf6c1963fdb552b3beca7}
+      \strng{bibnamehash}{7f456cc9062cf6c1963fdb552b3beca7}
+      \strng{authorbibnamehash}{7f456cc9062cf6c1963fdb552b3beca7}
+      \strng{authornamehash}{7f456cc9062cf6c1963fdb552b3beca7}
+      \strng{authorfullhash}{7f456cc9062cf6c1963fdb552b3beca7}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{01623737}
+      \field{journaltitle}{Educational Evaluation and Policy Analysis}
+      \field{number}{1}
+      \field{title}{{Intraclass correlation values for planning group-randomized trials in education}}
+      \field{volume}{29}
+      \field{year}{2007}
+      \field{pages}{60\bibrangedash 87}
+      \range{pages}{28}
+      \verb{doi}
+      \verb 10.3102/0162373707299706
+      \endverb
+    \endentry
+    \entry{Kaplan2008}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9aa60a0635fc104c28dda319ab8cca3d}{%
+           family={Kaplan},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9aa60a0635fc104c28dda319ab8cca3d}
+      \strng{fullhash}{9aa60a0635fc104c28dda319ab8cca3d}
+      \strng{bibnamehash}{9aa60a0635fc104c28dda319ab8cca3d}
+      \strng{authorbibnamehash}{9aa60a0635fc104c28dda319ab8cca3d}
+      \strng{authornamehash}{9aa60a0635fc104c28dda319ab8cca3d}
+      \strng{authorfullhash}{9aa60a0635fc104c28dda319ab8cca3d}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Developmental Psychology}
+      \field{number}{2}
+      \field{title}{{An Overview of Markov Chain Methods for the Study of Stage-Sequential Developmental Processes}}
+      \field{volume}{44}
+      \field{year}{2008}
+      \field{pages}{457\bibrangedash 467}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1037/0012-1649.44.2.457
+      \endverb
+    \endentry
+    \entry{Kaplan2011}{inbook}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9aa60a0635fc104c28dda319ab8cca3d}{%
+           family={Kaplan},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c00d12e6014a74537255911ffdfacea4}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Jee-Seon},
+           giveni={J\bibinithyphendelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=04dfbda052fb0c044524acb5e387c6cf}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Su-Young},
+           giveni={S\bibinithyphendelim Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=c021618a3fe9e196dbbe2c382fd81899}{%
+           family={Millsap},
+           familyi={M\bibinitperiod},
+           given={Roger\bibnamedelima E},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=1864bed0dc1578554f7d6a9aaf4eb6b0}{%
+           family={Maydeu-Olivares},
+           familyi={M\bibinithyphendelim O\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {London, UK}%
+      }
+      \list{publisher}{1}{%
+        {SAGE Publications}%
+      }
+      \strng{namehash}{9717e526833e387c4aaa3a2413992499}
+      \strng{fullhash}{fe801615d30c1a62911aa9975a5a0bb8}
+      \strng{bibnamehash}{fe801615d30c1a62911aa9975a5a0bb8}
+      \strng{authorbibnamehash}{fe801615d30c1a62911aa9975a5a0bb8}
+      \strng{authornamehash}{9717e526833e387c4aaa3a2413992499}
+      \strng{authorfullhash}{fe801615d30c1a62911aa9975a5a0bb8}
+      \strng{editorbibnamehash}{e5e18b439edd3d5660588d2617a79d21}
+      \strng{editornamehash}{e5e18b439edd3d5660588d2617a79d21}
+      \strng{editorfullhash}{e5e18b439edd3d5660588d2617a79d21}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The SAGE Handbook of Quantitative Methods in Psychology}
+      \field{title}{{Multilevel Latent Variable Modeling: Current Research and Recent Developments}}
+      \field{year}{2011}
+      \field{pages}{592\bibrangedash 612}
+      \range{pages}{21}
+    \endentry
+    \entry{Kaplan2005}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=9aa60a0635fc104c28dda319ab8cca3d}{%
+           family={Kaplan},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f1b12f5bc5d0b4c6085573ab73dfe826}{%
+           family={Walpole},
+           familyi={W\bibinitperiod},
+           given={Sharon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{05eaf7f598aef2fe4aa92afbab71c1ad}
+      \strng{fullhash}{05eaf7f598aef2fe4aa92afbab71c1ad}
+      \strng{bibnamehash}{05eaf7f598aef2fe4aa92afbab71c1ad}
+      \strng{authorbibnamehash}{05eaf7f598aef2fe4aa92afbab71c1ad}
+      \strng{authornamehash}{05eaf7f598aef2fe4aa92afbab71c1ad}
+      \strng{authorfullhash}{05eaf7f598aef2fe4aa92afbab71c1ad}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Educational Psychology}
+      \field{number}{4}
+      \field{title}{{A Stage-Sequential Model of Reading Transitions: Evidence From the Early Childhood Longitudinal Study}}
+      \field{volume}{97}
+      \field{year}{2005}
+      \field{pages}{551\bibrangedash 563}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1037/0022-0663.97.4.551
+      \endverb
+    \endentry
+    \entry{Koukounari2013}{article}{}
+      \name{author}{11}{}{%
+        {{un=0,uniquepart=base,hash=14b1fabe9e2caaf400638ecc5f9065ec}{%
+           family={Koukounari},
+           familyi={K\bibinitperiod},
+           given={Artemis},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cdb0ee506f95e3c6eca0bcd171a007da}{%
+           family={Moustaki},
+           familyi={M\bibinitperiod},
+           given={Irini},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=250aa3e06f709b0f4438d7197256ad40}{%
+           family={Grassly},
+           familyi={G\bibinitperiod},
+           given={Nicholas\bibnamedelima C.},
+           giveni={N\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=87e5cb2b814c7e420791c9fe1482fd50}{%
+           family={Blake},
+           familyi={B\bibinitperiod},
+           given={Isobel\bibnamedelima M.},
+           giveni={I\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5e1255592da906525ceabfe478dfe617}{%
+           family={Bas{á}{ñ}ez},
+           familyi={B\bibinitperiod},
+           given={Mar{í}a\bibnamedelima Gloria},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=de9cc79d16663d48c0ca0eb02fb2e7f9}{%
+           family={Gambhir},
+           familyi={G\bibinitperiod},
+           given={Manoj},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4bfb6e1331108a28bd974ff3b7136dcd}{%
+           family={Mabey},
+           familyi={M\bibinitperiod},
+           given={David\bibnamedelima C.W.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d373cae8d83608f9df8209d5ff5f6af9}{%
+           family={Bailey},
+           familyi={B\bibinitperiod},
+           given={Robin\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9b819dba7b063ed14fe58216ba6092b5}{%
+           family={Burton},
+           familyi={B\bibinitperiod},
+           given={Matthew\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6dc5729e6cedee1384e63825b30d4213}{%
+           family={Solomon},
+           familyi={S\bibinitperiod},
+           given={Anthony\bibnamedelima W.},
+           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f3475063a5ccf1d62b5ebcd37037e5e5}{%
+           family={Donnelly},
+           familyi={D\bibinitperiod},
+           given={Christl\bibnamedelima A.},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{181b06656d82340bbe83b75b28f8d86e}
+      \strng{fullhash}{96a7338b79811fc3cc6d9226fe5592cd}
+      \strng{bibnamehash}{96a7338b79811fc3cc6d9226fe5592cd}
+      \strng{authorbibnamehash}{96a7338b79811fc3cc6d9226fe5592cd}
+      \strng{authornamehash}{181b06656d82340bbe83b75b28f8d86e}
+      \strng{authorfullhash}{96a7338b79811fc3cc6d9226fe5592cd}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Journal of Epidemiology}
+      \field{number}{9}
+      \field{title}{Using a nonparametric multilevel latent Markov model to evaluate diagnostics for trachoma}
+      \field{volume}{177}
+      \field{year}{2013}
+      \field{pages}{913\bibrangedash 922}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1093/aje/kws345
+      \endverb
+    \endentry
+    \entry{McKay2020}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=b646ed0fff3f2028df0134255c92bd86}{%
+           family={McKay},
+           familyi={M\bibinitperiod},
+           given={Michael\bibnamedelima T.},
+           giveni={M\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=87d481e01953a6f6107221653c1aa54c}{%
+           family={Andretta},
+           familyi={A\bibinitperiod},
+           given={James\bibnamedelima R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1913544c695e4855b81655165f4c3fcf}{%
+           family={Padgett},
+           familyi={P\bibinitperiod},
+           given={Noah\bibnamedelima R.},
+           giveni={N\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dedbafc4fd0c9e1d782e05d87940eb0e}{%
+           family={{C. Cole}},
+           familyi={C\bibinitperiod},
+           given={Jon},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b864d0989b10097e927e13b29b6adca0}
+      \strng{fullhash}{814a3bd91ef075b9b2eaf0b03f80b5b5}
+      \strng{bibnamehash}{814a3bd91ef075b9b2eaf0b03f80b5b5}
+      \strng{authorbibnamehash}{814a3bd91ef075b9b2eaf0b03f80b5b5}
+      \strng{authornamehash}{b864d0989b10097e927e13b29b6adca0}
+      \strng{authorfullhash}{814a3bd91ef075b9b2eaf0b03f80b5b5}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Psychology}
+      \field{title}{{Stress and subjective life expectancy: Cross-sectional and longitudinal associations in early adolescence}}
+      \field{year}{2020}
+      \field{pages}{ijop.12660}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1002/ijop.12660
+      \endverb
+    \endentry
+    \entry{Muthen2002}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=31995732684f6362e169d4aa367c4681}{%
+           family={Muthen},
+           familyi={M\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{31995732684f6362e169d4aa367c4681}
+      \strng{fullhash}{31995732684f6362e169d4aa367c4681}
+      \strng{bibnamehash}{31995732684f6362e169d4aa367c4681}
+      \strng{authorbibnamehash}{31995732684f6362e169d4aa367c4681}
+      \strng{authornamehash}{31995732684f6362e169d4aa367c4681}
+      \strng{authorfullhash}{31995732684f6362e169d4aa367c4681}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Biostatistics}
+      \field{number}{4}
+      \field{title}{General growth mixture modeling for randomized preventive interventions}
+      \field{volume}{3}
+      \field{year}{2002}
+      \field{pages}{459\bibrangedash 475}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1093/biostatistics/3.4.459
+      \endverb
+    \endentry
+    \entry{Vermunt2010}{inbook}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=330de4275b99a9c2b54e3edf055f48e3}{%
+           family={Vermunt},
+           familyi={V\bibinitperiod},
+           given={Jeroen\bibnamedelima K},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{330de4275b99a9c2b54e3edf055f48e3}
+      \strng{fullhash}{330de4275b99a9c2b54e3edf055f48e3}
+      \strng{bibnamehash}{330de4275b99a9c2b54e3edf055f48e3}
+      \strng{authorbibnamehash}{330de4275b99a9c2b54e3edf055f48e3}
+      \strng{authornamehash}{330de4275b99a9c2b54e3edf055f48e3}
+      \strng{authorfullhash}{330de4275b99a9c2b54e3edf055f48e3}
+      \field{sortinit}{V}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Longitudinal Research with Latent Variables}
+      \field{title}{{Longitudinal research using mixture models}}
+      \field{year}{2010}
+      \field{pages}{119\bibrangedash 152}
+      \range{pages}{34}
+      \verb{doi}
+      \verb 10.1007/978-3-642-11760-2_4
+      \endverb
+    \endentry
+    \entry{Vermunt2005}{inbook}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=330de4275b99a9c2b54e3edf055f48e3}{%
+           family={Vermunt},
+           familyi={V\bibinitperiod},
+           given={Jeroen\bibnamedelima K},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6e1e7231dd7e31671e0ab2ae6c5fce97}{%
+           family={Magidson},
+           familyi={M\bibinitperiod},
+           given={Jay},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=f7c2a0fcb088d5a4c04081a5c23b5adb}{%
+           family={Weihs},
+           familyi={W\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=3861a372e6685ccb266b1e802baa1b9a}{%
+           family={Gaul},
+           familyi={G\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{e4652d3af89f4dc95bddb928a34cb347}
+      \strng{fullhash}{e4652d3af89f4dc95bddb928a34cb347}
+      \strng{bibnamehash}{e4652d3af89f4dc95bddb928a34cb347}
+      \strng{authorbibnamehash}{e4652d3af89f4dc95bddb928a34cb347}
+      \strng{authornamehash}{e4652d3af89f4dc95bddb928a34cb347}
+      \strng{authorfullhash}{e4652d3af89f4dc95bddb928a34cb347}
+      \strng{editorbibnamehash}{d0ac0ac97404a84fae0bc224c361d0df}
+      \strng{editornamehash}{d0ac0ac97404a84fae0bc224c361d0df}
+      \strng{editorfullhash}{d0ac0ac97404a84fae0bc224c361d0df}
+      \field{sortinit}{V}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Calssification: The Ubiquitous Challenge}
+      \field{title}{{Hierarchical mixture models for nested data structures}}
+      \field{year}{2005}
+      \field{pages}{176\bibrangedash 183}
+      \range{pages}{8}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

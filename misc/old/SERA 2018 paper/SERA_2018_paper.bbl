@@ -1,0 +1,32 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Asparouhov%
+\ \BBA {} Muth{\'e}n%
+}{%
+Asparouhov%
+\ \BBA {} Muth{\'e}n%
+}{%
+{\protect \APACyear {2008}}%
+}]{%
+asparouhov2008}
+\APACinsertmetastar {%
+asparouhov2008}%
+\begin{APACrefauthors}%
+Asparouhov, T.%
+\BCBT {}\ \BBA {} Muth{\'e}n, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Multilevel mixture models} {Multilevel mixture
+  models}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Advances in latent variable mixture models} {Advances in
+  latent variable mixture models}\ (\BPGS\ 27--51).
+\newblock
+\APACaddressPublisher{}{Information Age Charlotte, NC}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

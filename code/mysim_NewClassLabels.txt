@@ -1,0 +1,5 @@
+1 C:/Users/noahp/Box/Research/Morgan-Padgett/Multilevel-LTA/code/conditions/condition1/results_conditions1_rep1.pro 2 1
+1 C:/Users/noahp/Box/Research/Morgan-Padgett/Multilevel-LTA/code/conditions/condition1/results_conditions1_rep2.pro 2 1
+1 C:/Users/noahp/Box/Research/Morgan-Padgett/Multilevel-LTA/code/conditions/condition1/results_conditions1_rep3.pro 2 1
+0 C:/Users/noahp/Box/Research/Morgan-Padgett/Multilevel-LTA/code/conditions/condition1/results_conditions1_rep4.pro 1 2
+1 C:/Users/noahp/Box/Research/Morgan-Padgett/Multilevel-LTA/code/conditions/condition1/results_conditions1_rep5.pro 2 1

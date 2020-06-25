@@ -1,0 +1,74 @@
+
+TITLE: MLTA Test    
+
+DATA: 	FILE IS condition1_rep5.dat; 
+
+VARIABLE:	
+	NAMES ARE u1-u4 u21-u24 c1t c2t cluster;     
+	USEVARIABLES = u1-u4 u21-u24;
+        CATEGORICAL = u1-u4 u21-u24;        
+	CLASSES=c1(2) c2(2);        
+	CLUSTER=cluster;
+	AUXILIARY=c1t c2t;       
+
+ANALYSIS: TYPE = MIXTURE TWOLEVEL;        
+	  STARTS = 200 20;        
+	  PROCESS=4(STARTS);
+	  INTEGRATION = 10;    
+
+MODEL:
+    %WITHIN%
+        %OVERALL%
+            [c2#1]   (a);
+            c2 ON c1 (g);
+    %BETWEEN%
+        %OVERALL%
+            c2#1 ON c1#1 (b);
+            c1#1  (v1);
+            c2#1  (v2);
+
+    MODEL c1:
+        %BETWEEN%
+            %c1#1%
+            [u1$1-u4$1] (a1-a4);
+
+            %c1#2%
+            [u1$1-u4$1] (a11-a14);
+  
+    MODEL c2:
+        %BETWEEN%
+            %c2#1%
+            [u21$1-u24$1] (a1-a4);
+
+            %c2#2%
+            [u21$1-u24$1] (a11-a14);
+
+MODEL CONSTRAINT:
+    NEW(log11 log21
+        prob11 prob12
+        prob21 prob22 
+        odds12 odds21);
+    ! define 4 logits. Note that logits are zero
+    ! for the last (reference) c2 class
+    ! logit c1=1, c2=1:
+    log11 = a + g;
+    ! logit c1=2, c2=1
+    ! (see p. 447 table, last row)
+    log21 = a;
+    ! define probabilities for the 4 c1, c2 cells
+    prob11 = exp(log11)/(exp(log11)+1);
+    prob12 = 1/(exp(log11)+1);
+    prob21 = exp(log21)/(exp(log21)+1);
+    prob22 = 1/(exp(log21)+1);
+
+    ! define odds with diagonal (staying in the same class) as
+    ! the reference class
+    odds12 = prob12/prob11;
+    odds21 = prob21/prob22;
+
+
+SAVEDATA: Results are results_conditions1_rep5.par;
+	  FILE IS results_conditions1_rep5.pro;
+	  SAVE IS CPROBABILITIES;
+
+OUTPUT: tech1 tech4 TECH8 TECH11 TECH15;

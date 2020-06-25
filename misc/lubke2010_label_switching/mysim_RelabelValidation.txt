@@ -1,0 +1,6 @@
+file isSquare areRsum>0 areCsum>0 isNotClpsd K-1>tol? whichAlgo
+fmm_dat1.pro TRUE TRUE TRUE TRUE TRUE colMax
+fmm_dat2.pro TRUE TRUE TRUE TRUE TRUE colMax
+fmm_dat3.pro TRUE TRUE TRUE TRUE TRUE colMax
+fmm_dat4.pro TRUE TRUE TRUE TRUE TRUE colMax
+fmm_dat5.pro TRUE TRUE TRUE TRUE TRUE colMax
