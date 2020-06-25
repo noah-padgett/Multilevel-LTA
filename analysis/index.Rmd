@@ -9,3 +9,6 @@ editor_options:
 ---
 
 Welcome to my research website.
+
+
+*[3-Class Variance Decomposition](variance_decomposition_c3.html)
